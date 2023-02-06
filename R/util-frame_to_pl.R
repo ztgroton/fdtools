@@ -99,6 +99,7 @@ pl_to_frame <- function(pl, use_index) {
       data_x <- data_x %>% dplyr::left_join(pl$map[[x]], by = 'index')
       data_x[[x]] <- data_x$val
       data_x$val <- NULL
+      data_x$index <- NULL
 
       data_x
 
@@ -130,7 +131,7 @@ pl_to_frame <- function(pl, use_index) {
   }
 
   # Return
-  return(result)
+  return(as.data.frame(result))
 
 }
 
