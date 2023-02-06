@@ -1,0 +1,8 @@
+^renv$
+^renv\.lock$
+^fdtools\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^inst/extdata/test$
+^data-raw$
+^inst/extdata/csv$
