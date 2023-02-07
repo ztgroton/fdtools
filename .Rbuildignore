@@ -6,3 +6,7 @@
 ^inst/extdata/test$
 ^data-raw$
 ^inst/extdata/csv$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

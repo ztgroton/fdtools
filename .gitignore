@@ -42,3 +42,4 @@ vignettes/*.pdf
 # Custom User Specifications
 inst/extdata/test/*
 inst/doc
+docs
