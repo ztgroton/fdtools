@@ -5,8 +5,6 @@
 \title{Calculate 'Key Error' from Position List Records}
 \usage{
 err_key_from_records(pos, col)
-
-err_key_from_records(pos, col)
 }
 \arguments{
 \item{pos}{S3 Object of class 'pos_list'}
@@ -15,19 +13,12 @@ err_key_from_records(pos, col)
 }
 \value{
 R Object
-
-R Object
 }
 \description{
 Calculate 'Key Error' from Position List Records
-
-Calculate 'Functional Dependency Error' from Position List Records
 }
 \examples{
 \dontrun{
-result <- err_key_from_records(strip_part)
-}
-\dontrun{
-result <- err_key_from_records(strip_part)
+result <- err_key_from_records(pos_list, col_list)
 }
 }

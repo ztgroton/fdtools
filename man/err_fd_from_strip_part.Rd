@@ -4,10 +4,12 @@
 \alias{err_fd_from_strip_part}
 \title{Calculate 'Functional Dependency Error' from Stripped Product}
 \usage{
-err_fd_from_strip_part(part)
+err_fd_from_strip_part(x_part, xy_part)
 }
 \arguments{
-\item{part}{S3 Object}
+\item{x_part}{S3 Object}
+
+\item{xy_part}{S3 Object}
 }
 \value{
 R Object
