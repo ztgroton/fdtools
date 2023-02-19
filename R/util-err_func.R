@@ -23,8 +23,9 @@ err_key_from_strip_part <- function(part) {
   size_sum <- purrr::map_dbl(part, function(x) {length(x)})
 
   # Return Result
-  err <- size_sum - length(part)
+  err <- sum(size_sum) - length(part)
   res <- list(err = err, data = part)
+
   return(res)
 
 }
