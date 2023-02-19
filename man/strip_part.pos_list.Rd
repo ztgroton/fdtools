@@ -4,12 +4,12 @@
 \alias{strip_part.pos_list}
 \title{S3 Generic 'strip_part' returns a stripped partition}
 \usage{
-\method{strip_part}{pos_list}(obj, ...)
+\method{strip_part}{pos_list}(obj, col)
 }
 \arguments{
 \item{obj}{S3 Object}
 
-\item{...}{ellipsis}
+\item{col}{character - Vector of column names used to create partition}
 }
 \value{
 list

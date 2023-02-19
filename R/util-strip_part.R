@@ -112,7 +112,7 @@ strip_product_r <- function(lhs, rhs) {
   res <- res %>% dplyr::filter(.data$orig_row_cnt > 1)
 
   # Unnest 'orig_row_num'
-  data <- data %>%
+  data <- res %>%
     dplyr::select(.data$val_row_num, .data$orig_row_num) %>%
     tidyr::unnest(.data$orig_row_num)
 
