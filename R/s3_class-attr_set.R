@@ -20,7 +20,7 @@ new_attr_set <- function(attributes) {
     data = new.env()
   )
 
-  # Store `attr` in `rs$data`
+  # Store `attributes` in `rs$data`
   rs$data$attributes <- attributes
 
   # Set Class
