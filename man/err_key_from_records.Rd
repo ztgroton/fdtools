@@ -4,12 +4,14 @@
 \alias{err_key_from_records}
 \title{Calculate 'Key Error' from Position List Records}
 \usage{
-err_key_from_records(pos, col)
+err_key_from_records(pos, col, err_only)
 }
 \arguments{
 \item{pos}{S3 Object of class 'pos_list'}
 
 \item{col}{character - Vector of column names}
+
+\item{err_only}{TRUE/FALSE - Optionally specify if only failing values should be returned}
 }
 \value{
 R Object

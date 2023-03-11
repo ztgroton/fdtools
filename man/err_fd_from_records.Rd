@@ -4,14 +4,16 @@
 \alias{err_fd_from_records}
 \title{Calculate 'Functional Dependency Error' from Position List Records}
 \usage{
-err_fd_from_records(pos, x_col, y_col)
+err_fd_from_records(pos, xcol, ycol, err_only)
 }
 \arguments{
 \item{pos}{S3 Object of class 'pos_list'}
 
-\item{x_col}{character - Vector of column names}
+\item{xcol}{character - Vector of column names}
 
-\item{y_col}{character - Vector of column names}
+\item{ycol}{character - Vector of column names}
+
+\item{err_only}{TRUE/FALSE - Optionally specify if only failing values should be returned}
 }
 \value{
 R Object
@@ -21,6 +23,6 @@ Calculate 'Functional Dependency Error' from Position List Records
 }
 \examples{
 \dontrun{
-result <- err_key_from_records(strip_part)
+result <- err_key_from_records(pos_list, xcol, ycol)
 }
 }

@@ -19,6 +19,6 @@ Calculate 'Functional Dependency Error' from Stripped Product
 }
 \examples{
 \dontrun{
-result <- err_fd_from_strip_part(strip_part)
+result <- err_fd_from_strip_part(x_part, xy_part)
 }
 }
