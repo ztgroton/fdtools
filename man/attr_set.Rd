@@ -4,10 +4,10 @@
 \alias{attr_set}
 \title{S3 Helper Function for Class 'attr_set'}
 \usage{
-attr_set(attributes)
+attr_set(attr)
 }
 \arguments{
-\item{attributes}{character}
+\item{attr}{character}
 }
 \value{
 S3 Object

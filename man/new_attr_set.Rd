@@ -4,10 +4,10 @@
 \alias{new_attr_set}
 \title{S3 Constructor for Class 'attr_set'}
 \usage{
-new_attr_set(attributes)
+new_attr_set(attr)
 }
 \arguments{
-\item{attributes}{character}
+\item{attr}{character}
 }
 \value{
 S3 Object

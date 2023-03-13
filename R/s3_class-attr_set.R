@@ -1,7 +1,7 @@
 
 #' S3 Constructor for Class 'attr_set'
 #'
-#' @param attributes character
+#' @param attr character
 #'
 #' @return S3 Object
 #' @export
@@ -10,18 +10,16 @@
 #' \dontrun{
 #' result <- new_attr_set(x)
 #' }
-new_attr_set <- function(attributes) {
+new_attr_set <- function(attr) {
 
   # Validate Input
-  if (missing(attributes)) {stop("`attributes` is missing in call to `new_attr_set`")}
+  if (missing(attr)) {stop("`attr` is missing in call to `new_attr_set`")}
 
   # Initialize Empty S3 Object
-  rs <- list(
-    data = new.env()
-  )
+  rs <- new.env()
 
-  # Store `attributes` in `rs$data`
-  rs$data$attributes <- attributes
+  # Store `attr` in `rs`
+  rs$attr <- attr
 
   # Set Class
   class(rs) <- c(setdiff('attr_set', class(rs)), class(rs))
@@ -68,32 +66,32 @@ validate_attr_set <- function(obj, bool) {
 
   # ADD CUSTOM INPUT VALIDATIONS HERE (USE SAME TEMPLATE AS `obj` and `bool`)
 
-  # * `obj$data`
-  if (!isTRUE(is.environment(obj$data)) || !isTRUE(identical(names(obj$data), 'attributes'))) {
-    msg <- "`obj$data` is not a validly formatted environment in call to `validate_attr_set`"
+  # * `obj`
+  if (!isTRUE(is.environment(obj)) || !isTRUE(identical(names(obj), 'attr'))) {
+    msg <- "`obj` is not a validly formatted environment in call to `validate_attr_set`"
     err <- c(msg, err)
   }
 
   # Conditionally Return Error Messages (if any at this point in execution)
   if (!isTRUE(length(err) == 0)) {return(err)}
 
-  # * `obj$data$attributes`
-  is_char <- isTRUE(is.character(obj$data$attributes))
-  is_non_na <- !isTRUE(any(purrr::map_lgl(obj$data$attributes, function(x){isTRUE(is.null(x)) || isTRUE(is.na(x))})))
-  is_unique <- isTRUE(identical(sort(obj$data$attributes), sort(unique(obj$data$attributes))))
+  # * `obj$attr`
+  is_char <- isTRUE(is.character(obj$attr))
+  is_non_na <- !isTRUE(any(purrr::map_lgl(obj$attr, function(x){isTRUE(is.null(x)) || isTRUE(is.na(x))})))
+  is_unique <- isTRUE(identical(sort(obj$attr), sort(unique(obj$attr))))
 
   if (!isTRUE(is_char)) {
-    msg <- "`obj$data$attributes` must be type character in call to `validate_attr_set`"
+    msg <- "`obj$attr` must be type character in call to `validate_attr_set`"
     err <- c(msg, err)
   }
 
   if (!isTRUE(is_non_na)) {
-    msg <- "`obj$data$attributes` must not contain any NULL or NA values in call to `validate_attr_set`"
+    msg <- "`obj$attr` must not contain any NULL or NA values in call to `validate_attr_set`"
     err <- c(msg, err)
   }
 
   if (!isTRUE(is_unique)) {
-    msg <- "`obj$data$attributes` must only contain distinct values in call to `validate_attr_set`"
+    msg <- "`obj$attr` must only contain distinct values in call to `validate_attr_set`"
     err <- c(msg, err)
   }
 
@@ -120,7 +118,7 @@ validate_attr_set <- function(obj, bool) {
 
 #' S3 Helper Function for Class 'attr_set'
 #'
-#' @param attributes character
+#' @param attr character
 #'
 #' @return S3 Object
 #' @export
@@ -129,11 +127,11 @@ validate_attr_set <- function(obj, bool) {
 #' \dontrun{
 #' test <- attr_set(x)
 #' }
-attr_set <- function(attributes) {
+attr_set <- function(attr) {
 
   # Validate Input
-  if (missing(attributes)) {stop("`attributes` is missing in call to `attr_set`")}
+  if (missing(attr)) {stop("`attr` is missing in call to `attr_set`")}
 
-  validate_attr_set(new_attr_set(attributes))
+  validate_attr_set(new_attr_set(attr))
 
 }
